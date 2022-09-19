@@ -1,0 +1,10 @@
+# Social Engineering can cause a major breach of any advanced or expensive system. Telling who and what is and will become increasingly difficult as 
+newer technologies emerge. Passwordless systems that utilize 2fA are a great defence, but can still become breached. The following is an example of what can be done
+with a socially engineered acquired 2fA and password.
+
+ssh [username]@[ip_address]
+#here the user only need to log into the system. 
+
+cd etc/hosts
+#here the user can change IP for the DNS of the host to whatever spoofed or malicious website they desire and steal more privledged information, or valuable assets...
+
