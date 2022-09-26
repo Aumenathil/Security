@@ -1,0 +1,7 @@
+#Every week we get new reports of malicious actors operating out of known IP addresses. This code allows us to reject or deny
+#known malicious IP addresses.
+
+$ sudo systemctl enable firewalld
+$ sudo systemctl start firewalld
+$ sudo firewall-cmd --zone=drop --add-rich-rule=’ rule family=”ipv4” source address=”135.95.103.76” reject’
+$ sudo firewall-cmd --reload
