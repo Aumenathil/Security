@@ -1,0 +1,16 @@
+#The following is built within Linux Ubantu. It establishes SNORT RULES for IDS and IPS firewall protection, for the 
+detection of pings and scans. Very useful data! 
+#We can use the website created by Christopher Davis @ https://github.com/chrisjd20/Snorpy
+
+sudo nano /etc/snort/rules/local.rules
+
+#insde nano
+alert icmp any any -> $HOME_NET any (msg:"ICMP Ping Detected"; sid: 100001; rev:1;)
+#save and quit
+sudo snort -q -l /var/log/snort -i enp0s3 -A console -c  /etc/snort/snort.conf
+#The -i option will be different for everyone! Please note that your interface for SNORT will be different for different 
+configurations.
+#The snort will detect ICMP pings.
+
+#The following is a SNORT RULE for detecting tcp instrusion such as ssh.
+alert tcp any any -> $HOME_NET 22 (msg: SSH Authentication Attempt"; sid 100002; rev:1;)
