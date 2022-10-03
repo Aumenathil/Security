@@ -1,0 +1,15 @@
+#ssh, usually provided through port 22, is a great way to gain a secure and encrypted channel into a cloud interface or remote computer. Essentially,
+#we use ssh to access machines, whether real or virtual. A keygen can be produced for an ssh key to produce a public key (viewable to anyone anywhere) that can be use on
+#an external website or external machine to remote in or "git pull" information. Hopefully that is a good enough explanation for the usefulness of ssh. Here is the 
+#implementation:
+
+#-Terminal WIndow-
+ssh-keygen
+#keep & save the key as default, or change to /users/.ssh
+#enter desired passphrase, best not to put one if you're using a terminal.
+#You'll now have a key fingerprint, and two saved key: 1.) a .pub file, and 2.) a private key. Copy and paste the .pub file into the virtual machine or external machine
+#to connect.
+#When you desire to connect, to the machine that posseses both the private key and the public key, then use:
+ssh username@pub-IP-Address
+
+#You now have remote access through ssh (usually port 22), over RSA 3072 and SHA-256. Thank you for reading!
