@@ -1,0 +1,8 @@
+#OpenSsl Encryption:
+
+echo "ciphertext" > cipher.txt
+
+openssl enc -pbkdf2 -nosalt -aes-256-cbc -d -in cipher.txt -base64 -K key21928921892191298128912 -iv initializationvector210812082021208AED
+
+This should decrypt most ciphertext.
+
