@@ -1,0 +1,1 @@
+source="apache_attack_logs.txt" host="Apache_logs" sourcetype="access_combined" | iplocation clientip | stats dc(clientip) by Country | search NOT (Country="United States")
